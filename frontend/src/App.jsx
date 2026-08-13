@@ -8,6 +8,9 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // Your deployed FastAPI backend
+  const API_URL = "https://backend-askymynotes.onrender.com";
+
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
 
@@ -31,7 +34,7 @@ function App() {
     setAnswer("");
 
     try {
-      const response = await fetch("http://localhost:8000/ask", {
+      const response = await fetch(`${API_URL}/ask`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
