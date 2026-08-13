@@ -31,7 +31,7 @@ function App() {
     setAnswer("");
 
     try {
-      const response = await fetch("https://backend-model-t26f.onrender.com/", {
+      const response = await fetch("https://backend-model-t26f.onrender.com/ask", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
